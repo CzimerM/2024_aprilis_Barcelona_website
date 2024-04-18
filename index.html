@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcelona Sights</title>
+    <script src="https://kit.fontawesome.com/7524a8b222.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="barcelonaApp" ng-controller="barcelonaCtrl">
+    <div class="wrapper">
+    <header>
+        <nav>
+            <h1>Barcelona Sights</h1>
+            <a href="">Home</a>
+            <a href="">Gallery</a>
+            <a href="">Contact</a>
+        </nav>
+    </header>
+    <main>
+        
+        <section>
+            <div class="card" ng-repeat="attraction in attractions">        
+                <img src="img/{{attraction.img}}.jpg" alt="">
+                <div class="overlay">
+                    <h1>{{attraction.title}}</h1>
+                    <p>{{attraction.description}}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://facebook.com" class="fa-brands fa-facebook"></a>
+        <a href="https://instagram.com" class="fa-brands fa-instagram"></a>
+        <a href="https://twitter.com" class="fa-brands fa-twitter"></a>
+    </footer>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

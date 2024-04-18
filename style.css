@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* html {
+    overflow: hidden;
+} */
+
+/* body {
+    overscroll-behavior: contain;
+} */
+
+
+:root {
+    --black: #000000ff;
+    --pacific-cyan: #00a5cfff;
+    --pacific-cyan-hover: rgb(6, 102, 126);
+    --pacific-cyan-hover-transparent: rgba(6, 102, 126, 0.6);
+    --magnolia: #efe9f4ff;
+    --jade: #57a773ff;
+    --orange-peel: #ffa62bff;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--jade);
+    color: var(--magnolia);
+    padding: 10px;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--pacific-cyan);
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--pacific-cyan-hover);
+}
+
+nav * {
+    padding: 10px;
+    
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    margin: 1vw;
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card p {
+        top: 10vw !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+    .card p {
+        top: 16vw !important;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.card h1 {
+    visibility: hidden;
+    top: 2vw;
+    left: 1vw;
+    color: var(--magnolia);
+    font-size: 1.8em;
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+    position: absolute;
+}
+
+.card p {
+    position: absolute;
+    visibility: hidden;
+    width: 90%;
+    top: 8vw;
+    left: 1vw;
+    right: 1vw;
+    color: var(--magnolia);
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+}
+
+.card .overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.card:hover > .overlay {
+    width: 100%;
+    visibility: visible;
+    height: 100%;
+    background-color: var(--pacific-cyan-hover-transparent);
+}
+
+.overlay:hover > h1, .overlay:hover > p {
+    visibility: visible;   
+}
+
+footer {
+    height: 8vw;
+    width: 100%;
+    background-color: var(--jade);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    gap: 15px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
